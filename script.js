@@ -17,15 +17,22 @@ document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
   console.log(guess, typeof guess);
 
+  // No number entered
   if (!guess) {
     document.querySelector('.message').textContent = 'No Number! 😒';
+
+    // Winning number
   } else if (guess === secretNumber) {
     document.querySelector('.message').textContent = '🎉Correct Number!🎉';
+
+    //Guess too high
   } else if (guess > secretNumber) {
     if (score > 1) {
       document.querySelector('.message').textContent = 'Lower!';
       score--;
       document.querySelector('.score').textContent = score;
+
+      // guess too low
     } else {
       document.querySelector('.message').textContent = 'Loser!';
       document.querySelector('.score').textContent = 0;
